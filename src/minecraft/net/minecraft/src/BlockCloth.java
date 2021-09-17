@@ -4,7 +4,9 @@ import java.util.List;
 
 public class BlockCloth extends Block
 {
-	static {new RitualisticCore();}
+	static {
+		RitualisticCore.getInstance();
+	}
 	
     private Icon[] iconArray;
 

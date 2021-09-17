@@ -13,7 +13,19 @@ conf/
 
 docs/
 
-eclipse/
+eclipse/*
+!eclipse/Client
+eclipse/Client/*
+!eclipse/Client/bin
+eclipse/Client/bin/*
+!eclipse/Client/bin/textures
+eclipse/Client/bin/textures/*
+!eclipse/Client/bin/textures/blocks
+!eclipse/Client/bin/textures/items
+eclipse/Client/bin/textures/blocks/*
+!eclipse/Client/bin/textures/blocks/Ritualistic*
+eclipse/Client/bin/textures/items/*
+!eclipse/Client/bin/textures/items/Ritualistic*
 
 jars/
 

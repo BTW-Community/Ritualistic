@@ -1,66 +1,30 @@
 package net.minecraft.src;
 
-public class RitualisticCore extends AddonExt{
-	/* 
-	   	public static SocksCropsMod getInstance() {
+public class RitualisticCore extends FCAddOn{
+	private static RitualisticCore instance;
+
+	public RitualisticCore() {
+		super("Ritualistic", "1.0.0", "Ritualistic");
+	}
+
+	public static RitualisticCore getInstance() {
 		if (instance == null) {
-			instance = new SocksCropsMod();
+			instance = new RitualisticCore();
 		}
 
 		return instance;
-		}
-	 */
-	public static RitualisticDefs ritualisticDefs;
-	public static RitualisticRecipes ritualisticRecipes;
-	
-	public RitualisticCore() {
-		super("Ritualistic", "1.0", "");
 	}
 
 	@Override
 	public void Initialize() {
-		{
-			FCAddOnHandler.LogMessage("Ritualistic Addon Initializing...");
-			
-			ritualisticDefs = RitualisticDefs.instance;
-			ritualisticRecipes = RitualisticRecipes.instance;
-			
-			
-		}
-	
+		FCAddOnHandler.LogMessage(this.getName() + " Version " + this.getVersionString() + " Initializing...");
+		RitualisticDefs.addDefinitions();
+		RitualisticRecipes.addRecipes();
+		FCAddOnHandler.LogMessage(this.getName() + " Initialized");
 	}
 
-}
-
-
-
-/*	Instancing the addon
- * 
- * private static SocksCropsMod instance;
- * 
- * 	public static SocksCropsMod getInstance() {
-		if (instance == null) {
-			instance = new SocksCropsMod();
-		}
-
-		return instance;
-	}
- */
-
-/* Get instance
- * 	public static SocksCropsMod getInstance() {
-		if (instance == null) {
-			instance = new SocksCropsMod();
-		}
-
-		return instance;
-	}
- */
-
-/* Language File
- * public String GetLanguageFilePrefix()
+	public String GetLanguageFilePrefix()
 	{
-		return "SocksCrops";
+		return "Ritualistic";
 	}
- * 
- */
+} 
